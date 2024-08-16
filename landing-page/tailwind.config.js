@@ -21,6 +21,8 @@ module.exports = {
         'light-blue': '#4CBDB1',
         'dark-blue': '#003262',
         'black': '#212529',
+        'gray': '#CBCBCB',
+        'error': '#FF4D4F',
       }
     },
   },
