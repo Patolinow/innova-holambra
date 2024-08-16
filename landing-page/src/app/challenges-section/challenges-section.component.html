@@ -1,0 +1,23 @@
+<section id="challenges" class="bg-white py-16 px-6">
+  <article class="max-w-view mx-auto">
+    <h1 class="text-center text-4xl md:text-5xl text-dark-blue font-bold mb-8">DESAFIOS PROPOSTOS</h1>
+    <p class="mb-12 max-w-[580px] xl:max-w-full mx-auto">Os principais desafios temáticos identificados junto ao setor produtivo são apresentados abaixo. As soluções
+      apresentadas pelos candidatos devem buscar solucionar essas dores, tendo como foco ao menos uma das culturas:
+      <span class="text-light-blue">soja, milho, feijão, algodão, trigo e citros.</span>
+    </p>
+
+    <ul class="flex flex-wrap justify-center gap-8">
+      <li class="w-[580px]" *ngFor="let challenge of challenges">
+        <div class="flex mb-4 items-center gap-4">
+          <img [src]="challenge.image" [alt]="challenge.title">
+          <h2 class="text-dark-blue text-2xl font-medium">{{ challenge.title }}</h2>
+        </div>
+        <ul>
+          <li class=" mb-2 last:mb-0 flex items-start" *ngFor="let text of challenge.texts">
+            <img src="assets/images/arrow_forward.svg" alt="arrow forward"> {{ text }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </article>
+</section>
