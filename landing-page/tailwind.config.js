@@ -15,7 +15,7 @@ module.exports = {
         '4.5xl': '2.5rem'
       },
       fontFamily: {
-        'gibson': ['Gibson', 'sans-serif']
+        'red-hat': ["'Red Hat Display'", 'sans-serif']
       },
       colors: {
         'light-blue': '#4CBDB1',
