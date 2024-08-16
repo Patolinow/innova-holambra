@@ -1,0 +1,15 @@
+<section id="schedule" class="bg-dark-blue py-16 px-6">
+  <article class="max-w-view mx-auto">
+    <h1 class="text-4xl md:text-5xl text-light-blue font-bold text-center mb-8">CRONOGRAMA</h1>
+
+    <ol class="text-white flex flex-wrap justify-center lg:justify-normal gap-8">
+      <li *ngFor="let item of scheduleItems" class="md:flex-grow-0 w-60 md:w-64 h-40 border-2 border-light-blue p-4">
+        <h2 class="text-2xl font-bold">{{ item.date }}</h2>
+        <div class="w-8 h-0.5 bg-light-blue my-2"></div>
+        <p>{{ item.text }}</p>
+      </li>
+    </ol>
+
+  </article>
+
+</section>
