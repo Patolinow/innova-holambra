@@ -1,0 +1,110 @@
+<section id="subscribe" class="bg-white px-6">
+
+  <form [formGroup]="subscribeForm" (ngSubmit)="onSubmit()"
+    class="max-w-view mx-auto py-16 border-dark-blue/10 border-t-2">
+    <h1 class="text-center text-4xl md:text-5xl text-dark-blue font-bold mb-8">FAÇA SUA INSCRIÇÃO</h1>
+
+    <fieldset class="max-w-[640px] mx-auto">
+      <fieldset class="flex flex-col md:flex-row gap-4 max-w-[640px] mb-4 mx-auto">
+        <div class="w-full">
+          <input placeholder="Nome" id="nome" formControlName="nome" type="text" (blur)="getErrorMessage('nome')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('nome')?.invalid && subscribeForm.get('nome')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('nome') }}
+          </div>
+        </div>
+        <div class="w-full">
+          <input placeholder="Sobrenome" id="sobrenome" formControlName="sobrenome" type="text"
+            (blur)="getErrorMessage('sobrenome')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('sobrenome')?.invalid && subscribeForm.get('sobrenome')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('sobrenome') }}
+          </div>
+        </div>
+      </fieldset>
+      
+      <fieldset class="flex flex-col md:flex-row gap-4 max-w-[640px] mb-4 mx-auto">
+        <div class="w-full">
+          <input placeholder="Email" id="email" formControlName="email" type="email" (blur)="getErrorMessage('email')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('email')?.invalid && subscribeForm.get('email')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('email') }}
+          </div>
+        </div>
+        <div class="w-full">
+          <input placeholder="Telefone" id="telefone" formControlName="telefone" type="tel"
+            (blur)="getErrorMessage('telefone')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('telefone')?.invalid && subscribeForm.get('telefone')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('telefone') }}
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="flex flex-col md:flex-row gap-4 max-w-[640px] mb-4 mx-auto">
+        <div class="w-full">
+          <input placeholder="CEP" id="cep" formControlName="cep" type="text"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('cep')?.invalid && subscribeForm.get('cep')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('cep') }}
+          </div>
+        </div>
+        <div class="w-full">
+          <input placeholder="Endereço" id="endereco" formControlName="endereco" type="text"
+            (blur)="getErrorMessage('endereco')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('endereco')?.invalid && subscribeForm.get('endereco')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('endereco') }}
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="flex flex-col md:flex-row gap-4 max-w-[640px] mb-4 mx-auto">
+        <div class="w-full">
+          <input placeholder="Bairro" id="bairro" formControlName="bairro" type="text" (blur)="getErrorMessage('bairro')"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+          <div *ngIf="subscribeForm.get('bairro')?.invalid && subscribeForm.get('bairro')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('bairro') }}
+          </div>
+        </div>
+        <div class="w-full">
+          <input placeholder="Complemento" id="complemento" formControlName="complemento" type="text"
+            class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 w-full px-4 py-2" />
+        </div>
+      </fieldset>
+      <fieldset class="flex gap-4 max-w-[640px] mb-4 mx-auto">
+        <div class="w-full">
+          <select id="cidade" formControlName="cidade" required class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 bg-white w-full px-4 py-2">
+            <option value="" disabled selected>Cidade</option>
+            <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{ cidade.nome }}</option>
+          </select>
+          <div *ngIf="subscribeForm.get('cidade')?.invalid && subscribeForm.get('cidade')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('cidade') }}
+          </div>
+        </div>
+        <div class="w-full">
+          <select id="estado" formControlName="estado" required class="text-lg text-black/80 placeholder:text-gray border-gray focus:outline-none focus:outline-gray focus:outline-1 focus:outline-offset-0 border-2 bg-white w-full px-4 py-2">
+            <option value="" disabled selected>Estado</option>
+            <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+          </select>
+          <div *ngIf="subscribeForm.get('estado')?.invalid && subscribeForm.get('estado')?.touched"
+            class="text-error font-light text-lg">
+            {{ getErrorMessage('estado') }}
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" [disabled]="!subscribeForm.valid || isLoading"
+        class="text-white bg-light-blue px-8 py-3 mt-2 font-medium text-xl hover:brightness-105 duration-150 w-full disabled:saturate-50 disabled:brightness-90 disabled:cursor-not-allowed">Enviar</button>
+    </fieldset>
+  </form>
+
+
+</section>
