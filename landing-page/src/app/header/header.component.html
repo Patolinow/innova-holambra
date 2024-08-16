@@ -1,0 +1,28 @@
+<header [class.sm:items-center]="!menuOpen"
+  class="fixed top-0 w-full lg:static max-w-view mx-auto flex justify-center sm:justify-between py-4 px-6 xl:px-0 text-white bg-dark-blue lg:bg-transparent border-b border-white/25">
+  <a href="#"><img src="assets/images/logo_holambra_telescope.svg" alt="Logo Holambra"
+      class="hidden sm:block h-fit"></a>
+
+  <nav class="w-full sm:w-fit">
+    <button (click)="toggleMenu()" class="block lg:hidden w-full">
+      <img src="assets/images/menu.svg" alt="menu" class="w-12 mx-auto">
+    </button>
+    <ul [class.hidden]="!menuOpen"
+      class="flex-col justify-center sm:justify-end lg:flex-row gap-4 font-medium hidden lg:flex w-full text-center text-2xl lg:text-base">
+      <li class="block py-2 sm:hidden">
+        <a href="#" (click)="toggleMenu()"><img src="assets/images/logo_holambra_telescope.svg" alt="Logo Holambra"
+            class="mx-auto"></a>
+      </li>
+      <li><a href="#subscribe" (click)="toggleMenu()"
+          class=" inline-block w-full py-4  hover:brightness-95 duration-150 ">INSCREVA-SE</a></li>
+      <li><a href="#challenges" (click)="toggleMenu()"
+          class="inline-block w-full py-4 hover:brightness-95 duration-150">DESAFIOS</a></li>
+      <li><a href="#schedule" (click)="toggleMenu()"
+          class=" inline-block w-full py-4 hover:brightness-95 duration-150">CRONOGRAMA</a></li>
+      <li><a href="#rewards" (click)="toggleMenu()"
+          class="inline-block w-full py-4 hover:brightness-95 duration-150">PREMIAÇÃO</a></li>
+      <li><a href="#challenges" (click)="toggleMenu()"
+          class=" inline-block w-full py-4 hover:brightness-95 duration-150">REGULAMENTO</a></li>
+    </ul>
+  </nav>
+</header>
